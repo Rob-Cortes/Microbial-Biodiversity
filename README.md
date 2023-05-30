@@ -16,8 +16,8 @@ Using the D3 library's d3.json(url) function, we read in samples.json from the U
 
 Samples.json is structured as dictionary of three arrays, two of which we will use: 'samples' and 'metadata'. Each item in the 'samples' array is a dictionary with the findings of a specific test (i.e., test subject id, id's and labels for otu's observed, and the prevlanece of each otu observed). Therefore, the following code would log the findings for the first test:
 
-let url = 'https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json';
-d3.json(url).then(function(data) {console.log(data.samples[0])};
+ let url = 'https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json';
+ d3.json(url).then(function(data) {console.log(data.samples[0])};
 
 The output of the code above is: 
  {id: '940', otu_ids: Array(80), sample_values: Array(80), otu_labels: Array(80)}
@@ -31,15 +31,15 @@ The metadata for each test subject is displayed in the class='panel-body' div.
 
 We define functions that process the information for a given test subject (e.g., sorting and slicing), in preparation for plotting. These functions return dictionary structures that can be passed directly to Plotly.newPlot() or Plotly.react(). For example, the function getBarData() could be used as follows. 
 
-// Fetch JSON data from URL and log the first object in the samples array
-d3.json(url).then(function(data) {
-    
-    // Pass the information from the first test subject to getBarData(), which sort the microbes from most prevalent to least prevalent and show only the the top 10. The dictionary returned by this function also includes some formatting instructions for Plotly.  
-    let barData = getBarData(data.samples[0]);
-    
-    // Plot the findings from the first test subject
-    Plotly.newPlot('bar', barData);
-};
+ // Fetch JSON data from URL and log the first object in the samples array
+ d3.json(url).then(function(data) {
+
+     // Pass the information from the first test subject to getBarData(), which sort the microbes from most prevalent to least prevalent and show only the the top 10. The dictionary returned by this function also includes some formatting instructions for Plotly.  
+     let barData = getBarData(data.samples[0]);
+
+     // Plot the findings from the first test subject
+     Plotly.newPlot('bar', barData);
+ };
 
 We display the information by calling Plotly.newPlot() or Plotly.react(), while pointing to either the 'bar' or 'bubble' div in the html, as needed. 
 
