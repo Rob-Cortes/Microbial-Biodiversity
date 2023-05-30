@@ -34,7 +34,17 @@ The metadata for each test subject is displayed in the class='panel-body' div.
 
 # Plotly Charts
 
-We define several functions that process the information for a given test subject (e.g., sorting and slicing), in preparation for plotting.   
+We define functions that process the information for a given test subject (e.g., sorting and slicing), in preparation for plotting. These functions return dictionary structures that can be passed directly to Plotly.newPlot() or Plotly.react(). For example, the function getBarData() could be used as follows. 
+
+// Fetch JSON data from URL and log the first object in the samples array
+d3.json(url).then(function(data) {
+    
+    // Pass the information from the first test subject to getBarData(), which sort the microbes from most prevalent to least prevalent and show only the the top 10. The dictionary returned by this function also includes some formatting instructions for Plotly.  
+    let barData = getBarData(data.samples[0]);
+    
+    // Plot the findings from the first test subject
+    Plotly.newPlot('bar', barData);
+};
 
 We display the information by calling Plotly.newPlot() or Plotly.react(), while pointing to either the 'bar' or 'bubble' div in the html, as needed. 
 
