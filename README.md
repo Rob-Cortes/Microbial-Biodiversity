@@ -17,9 +17,7 @@ Using the D3 library's d3.json(url) function, we read in samples.json from the U
 Samples.json is structured as dictionary of three arrays, two of which we will use: 'samples' and 'metadata'. Each item in the 'samples' array is a dictionary with the findings of a specific test (i.e., test subject id, id's and labels for otu's observed, and the prevlanece of each otu observed). Therefore, the following code would log the findings for the first test:
 
 const url = 'https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json';
-d3.json(url).then(function(data) {
-    console.log(data.samples[0])
-};
+d3.json(url).then(function(data) {console.log(data.samples[0])};
 
 The output of the code above is: 
  {id: '940', otu_ids: Array(80), sample_values: Array(80), otu_labels: Array(80)}
