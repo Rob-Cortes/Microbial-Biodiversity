@@ -6,10 +6,10 @@ The dashboard is designed to display the count of microbes observed in specific 
 # HTML
 The index.html file contains the architecture of the page. Among the HTML elements are:
 
-A select element, used as a dropdown menu to see results for different test subjects. This element includes an event listener that allows us to update the charts when a new test subject is selected. 
-A class='panel' div, used to display metadata about the selected test subject.
-A class='bar' div where we display the Plotly bar chart.
-A class='bubble' div where we display the Plotly bubble chart. 
+- A select element, used as a dropdown menu to see results for different test subjects. This element includes an event listener that allows us to update the charts when a new test subject is selected. 
+- A class='panel' div, used to display metadata about the selected test subject.
+- A class='bar' div where we display the Plotly bar chart.
+- A class='bubble' div where we display the Plotly bubble chart. 
 
 # Accessing JSON data
 Using the D3 library's d3.json(url) function, we read in samples.json from the URL https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json.
