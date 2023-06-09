@@ -1,4 +1,4 @@
-# belly-button-challenge
+# Leaflet Visualization of Robdunn Microbe Studies
 This exercise is an interactive dashboard that explores the Belly Button Biodiversity dataset (http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs microbes according to operational taxonomic units, or OTUs.
 
 The dashboard is designed to display the count of microbes observed in specific test subjects. We display the information in the form of a bar chart and a bubble chart.
